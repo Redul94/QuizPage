@@ -22,6 +22,7 @@ public class ResultActivity3 extends AppCompatActivity {
         value=getIntent().getIntExtra(MainActivity2.finalResult,0);
         outputView=findViewById(R.id.outputViewId);
         outputView.setText("values:"+value);
+        System.out.println("Temp" + value);
     }
 
     public void tryFunction(View view) {

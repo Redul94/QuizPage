@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.RadioGroup;
 
 public class MainActivity extends AppCompatActivity {
-    int score;
+    int score = 0;
     RadioGroup q1Radio;
     public static String q1="";
 
@@ -23,23 +23,27 @@ public class MainActivity extends AppCompatActivity {
         if(q1Radio.getCheckedRadioButtonId()==R.id.radioButton3Q1){
             score=5;
         }
-        Intent myIntent=new Intent(this,MainActivity2.class);
-        myIntent.putExtra(q1,score);
-        startActivity(myIntent);
-
-
     }
 
 
     public void q1NextFunction(View view) {
-        Intent myIntent=new Intent(this,MainActivity2.class);
+        if(q1Radio.getCheckedRadioButtonId()==R.id.radioButton3Q1){
+            score=5;
+        }
 
+        Intent myIntent=new Intent(this,MainActivity2.class);
+        myIntent.putExtra("score",score);
         startActivity(myIntent);
     }
 
     public void q1subFunction(View view) {
-        Intent myIntent=new Intent(this,MainActivity2.class);
 
+        if(q1Radio.getCheckedRadioButtonId()==R.id.radioButton3Q1){
+            score=5;
+        }
+
+        Intent myIntent=new Intent(this,MainActivity2.class);
+        myIntent.putExtra("score",score);
         startActivity(myIntent);
     }
 

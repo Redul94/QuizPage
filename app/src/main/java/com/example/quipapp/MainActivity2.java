@@ -16,16 +16,20 @@ public class MainActivity2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-        q2Radio=findViewById(R.id.q2Radiogrp);
-        temp=getIntent().getIntExtra(MainActivity.q1,0);
+
+        q2Radio = findViewById(R.id.q2Radiogrp);
+
+        Intent intent = getIntent();
+        temp = intent.getIntExtra("score",0);
+        finalScore = temp;
+
+        System.out.println("Temp" + temp);
+
     }
     public void q2RadioFunction(View view) {
         if(q2Radio.getCheckedRadioButtonId()==R.id.radioButtonQ1){
             finalScore=temp+5;
         }
-        Intent myIntent = new Intent(this,MainActivity2.class);
-        myIntent.putExtra(finalResult,finalScore);
-        startActivity(myIntent);
 
     }
     public void q2PreFunction(View view) {
@@ -35,6 +39,10 @@ public class MainActivity2 extends AppCompatActivity {
     }
     public void q2NextFunction(View view) {
         Intent myIntent=new Intent(this, ResultActivity3.class);
+        if(q2Radio.getCheckedRadioButtonId()==R.id.radioButtonQ1){
+            finalScore=temp+5;
+        }
+        myIntent.putExtra(finalResult, finalScore);
 
         startActivity(myIntent);
     }
