@@ -42,7 +42,8 @@ public class MainActivity extends AppCompatActivity {
             score=5;
         }
 
-        Intent myIntent=new Intent(this,MainActivity2.class);
+        Intent myIntent=new Intent(this,ResultActivity3.class);
+
         myIntent.putExtra("score",score);
         startActivity(myIntent);
     }

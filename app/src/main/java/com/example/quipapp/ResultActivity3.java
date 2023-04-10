@@ -18,11 +18,11 @@ public class ResultActivity3 extends AppCompatActivity {
 
         Intent myGetIntent = getIntent();
 
-//        value = myGetIntent.getIntExtra("finalScore",0);
-        value=getIntent().getIntExtra(MainActivity2.finalResult,0);
+
+        value=getIntent().getIntExtra("score",0);
         outputView=findViewById(R.id.outputViewId);
-        outputView.setText("values:"+value);
-        System.out.println("Temp" + value);
+        outputView.setText("values: "+value);
+        System.out.println("Temp: " + value);
     }
 
     public void tryFunction(View view) {

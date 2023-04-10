@@ -42,7 +42,7 @@ public class MainActivity2 extends AppCompatActivity {
         if(q2Radio.getCheckedRadioButtonId()==R.id.radioButtonQ1){
             finalScore=temp+5;
         }
-        myIntent.putExtra(finalResult, finalScore);
+        myIntent.putExtra("score", finalScore);
 
         startActivity(myIntent);
     }
